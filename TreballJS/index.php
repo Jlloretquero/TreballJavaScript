@@ -44,7 +44,7 @@ and open the template in the editor.
             </div>
             <div id="CuerpoContenido" class="col-lg-9">
                
-                <iframe  name=iframe src="DIV.png" id="iframe" width=800 height=1100 frameborder="0" scrolling=yes marginwidth=2 marginheight=4 align=center>Tu navegador no soporta frames!!</iframe>
+                <iframe  name=iframe src="DIV.png" id="iframe" width=850 height=1100 frameborder="0" scrolling=yes marginwidth=0 marginheight=0 >Tu navegador no soporta frames!!</iframe>
           </div>
         </div>
 
