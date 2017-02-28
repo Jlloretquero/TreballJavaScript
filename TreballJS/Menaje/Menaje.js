@@ -4,7 +4,7 @@ var txtDatos;
 var arrayPadre = [];
 function cargaArchivo() {
     $.ajax({
-        url: "./documentos/Jardin.csv",
+        url: "Menaje.csv",
         success: function (data) {
             //Estamos guardandolo en un variable gloval para poder acceder a los datos desde fuera
             txtDatos = data;
@@ -26,7 +26,7 @@ function leerDatos() {
         arrayHijo.push(lineas.split(";")[0]);
         arrayHijo.push(lineas.split(";")[1]);
         arrayHijo.push(lineas.split(";")[2]);
-        arrayHijo.push(lineas.split(";")[3]);
+        arrayHijo.push(lineas.split(";")[3].replace(",","."));
         arrayHijo.push(0);
         arrayHijo.push(0);
         //Metemos a la array hijo dentro de la padre
@@ -38,10 +38,10 @@ function leerDatos() {
 function insertarDatosTabla(posicion){
     var fila;
     if (posicion%2==0){
-        fila="<tr class='success'>";
+        fila="<tr class='danger'>";
     }
     else{
-        fila="<tr class='info'>";
+        fila="<tr class='warning'>";
     } 
     
     fila+= "<td><img src=' '></td>";
@@ -49,7 +49,7 @@ function insertarDatosTabla(posicion){
     fila+= "<td>"+arrayPadre[posicion][1]+"</td>";
     fila+= "<td>"+arrayPadre[posicion][2]+"</td>";
     fila+= "<td>"+arrayPadre[posicion][3]+"</td>";
-    fila+= "<td><input type='number' id='cajas"+posicion+"' ></td>";
+    fila+= "<td><input type='number' id='cajas"+posicion+"' min='0' oninput='calculoTotal("+posicion+")'></td>";
     fila+= "<td><input type='number' disabled id='total"+posicion+"'></td>";
     fila+= "</tr>";
     //Cada vez que hago un fila no borre la anterior
@@ -57,4 +57,20 @@ function insertarDatosTabla(posicion){
     
 }
 
+function calculoTotal(dato){
+    var numCaja=arrayPadre[dato][4]=parseInt(document.getElementById("cajas"+dato).value);
+    console.log(arrayPadre[dato]);
+    console.log(dato);
+    
+    var udCaja=parseInt(arrayPadre[dato][2]);
+    var precio=parseFloat(arrayPadre[dato][3]);
+    
+    var total=(udCaja*precio)*numCaja;
+    console.log(total);
+    
+    arrayPadre[dato][5]=total;
+    console.log(arrayPadre[dato]);
+    
+    document.getElementById("total"+dato).value=Math.round(total*100)/100;
+}
       

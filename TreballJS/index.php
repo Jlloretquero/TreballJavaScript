@@ -36,15 +36,15 @@ and open the template in the editor.
                 <div id="CuerpoDerecha"  class="col-lg-3"> 
                     <p align="center">SELECCIONAR CATALOGO</p>
                  <form action="">
-                <input type="radio" name="ventana" value="Calculadora" checked onclick="cambiarIframe(3)"> Jardineria             
-                <input type="radio" name="ventana" value="Calculadora"  onclick="cambiarIframe(1)"> Calculadora
-                <input type="radio" name="ventana" value="Slider" onclick="cambiarIframe(2)"> Slider
+                <input type="radio" name="ventana" value="Calculadora" checked onclick="cambiarIframe(1)"> Jardineria             
+                <input type="radio" name="ventana" value="Calculadora"  onclick="cambiarIframe(2)"> Limpieza
+                <input type="radio" name="ventana" value="Slider" onclick="cambiarIframe(3)"> Menaje
  
 </form></div>
             </div>
             <div id="CuerpoContenido" class="col-lg-9">
                
-                <iframe  name=iframe src="DIV.png" id="iframe" width=850 height=1100 frameborder="0" scrolling=yes marginwidth=0 marginheight=0 >Tu navegador no soporta frames!!</iframe>
+                <iframe  name=iframe src="DIV.png" id="iframe" width=910 height=1100 frameborder="0" scrolling=yes marginwidth=0 marginheight=0 >Tu navegador no soporta frames!!</iframe>
           </div>
         </div>
 

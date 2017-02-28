@@ -1,18 +1,15 @@
 function cambiarIframe($parametro){
+
     if ($parametro == 1){
-        document.getElementById("iframe").src="calculadora.html"
+        document.getElementById("iframe").src="Jardin/Jardin.html"
     }
-
+  
     else if ($parametro == 2){
-        document.getElementById("iframe").src="act3/slider.html"
+        document.getElementById("iframe").src="Limpieza/Limpieza.html"
     }
 
-    else if ($parametro == 3){
-        document.getElementById("iframe").src="tablaJardineria.html"
-    }
-
-     else if ($parametro == 4){
-        document.getElementById("iframe").src="Reloj.html"
+     else if ($parametro == 3){
+        document.getElementById("iframe").src="Menaje/Menaje.html"
     }
 
 }
