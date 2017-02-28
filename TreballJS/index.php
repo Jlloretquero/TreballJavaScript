@@ -9,9 +9,9 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <title></title>
         <link rel="stylesheet" href="index.css">
-        <script type="text/javascript" src="javaScript.js"></script>
-         <script src="Iframe.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="jquery-3.1.1.min.js"></script>
+      
     </head>
     <body>
         <div id="MenuSuperior" >
@@ -56,5 +56,8 @@ and open the template in the editor.
         header("Cache-Control: post-check=0, pre-check=0", false);
         header("Pragma: no-cache");
         ?>
+        
+         <script type="text/javascript" src="javaScript.js"></script>
+         <script src="Iframe.js"></script>
     </body>
 </html>
