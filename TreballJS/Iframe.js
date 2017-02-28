@@ -8,7 +8,7 @@ function cambiarIframe($parametro){
     }
 
     else if ($parametro == 3){
-        document.getElementById("iframe").src="html.html"
+        document.getElementById("iframe").src="tablaJardineria.html"
     }
 
      else if ($parametro == 4){

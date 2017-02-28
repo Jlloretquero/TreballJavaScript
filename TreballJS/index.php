@@ -36,8 +36,7 @@ and open the template in the editor.
                 <div id="CuerpoDerecha"  class="col-lg-3"> 
                     <p align="center">SELECCIONAR CATALOGO</p>
                  <form action="">
-                <input type="radio" name="ventana" value="Calculadora" checked onclick="cambiarIframe(3)"> Formulario
-             
+                <input type="radio" name="ventana" value="Calculadora" checked onclick="cambiarIframe(3)"> Jardineria             
                 <input type="radio" name="ventana" value="Calculadora"  onclick="cambiarIframe(1)"> Calculadora
                 <input type="radio" name="ventana" value="Slider" onclick="cambiarIframe(2)"> Slider
  
@@ -57,7 +56,7 @@ and open the template in the editor.
         header("Pragma: no-cache");
         ?>
         
-         <script type="text/javascript" src="javaScript.js"></script>
+         
          <script src="Iframe.js"></script>
     </body>
 </html>
