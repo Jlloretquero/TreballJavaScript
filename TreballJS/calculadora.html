@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        imput{margin:0 auto;}
+
+    </style>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="calculadora.js"></script>
+</head>
+
+<body>
+    <div align="center"><h1>CALCULADORA</h1></div>
+    <div align="center">
+   <table border="5px" width="300px" height="300">
+           <tr>
+              <td colspan="4" bgcolor="green"><input type="text" id="Resultado" readonly="true" value="0" style='width:100%; height:100%'; bgcolor="red"></td>
+          </tr>
+          <tr>
+              <td><input type="button" id="1" value="1" onclick="darNumero('1')" style='width:100%; height:100%' ></td>
+              <td><input type="button" id="2" value="2" onclick="darNumero('2')" style='width:100%; height:100%'></td>
+              <td><input type="button" id="3" value="3" onclick="darNumero('3')" style='width:100%; height:100%'></td>
+              <td><input type="button" id="sumar" value="+" onclick="operaracion('+')" style='width:100%; height:100%' ></td>
+          </tr>
+           <tr>
+            <td><input type="button" id="4" value="4" onclick="darNumero('4')" style='width:100%; height:100%'></td>
+            <td><input type="button" id="5" value="5" onclick="darNumero('5')" style='width:100%; height:100%'></td>
+            <td><input type="button" id="6" value="6" onclick="darNumero('6')" style='width:100%; height:100%'></td>
+            <td><input type="button" id="restar" value="-" onclick="operaracion('-')" style='width:100%; height:100%'></td>
+          </tr>
+           <tr>
+              <td><input type="button" id="7" value="7" onclick="darNumero('7')" style='width:100%; height:100%'></td>
+              <td><input type="button" id="8" value="8" onclick="darNumero('8')" style='width:100%; height:100%'></td>
+              <td><input type="button" id="9" value="9" onclick="darNumero('9')" style='width:100%; height:100%'></td>
+              <td><input type="button" id="multiplicacion" value="X" onclick="operaracion('*')" style='width:100%; height:100%'></td>
+          </tr>
+            <tr>
+             <td><input type="button" id="BotonInicio" value="C" onclick="borrar()" style='width:100%; height:100%'></td>
+             <td><input type="button" id="0" value="0" onclick="darNumero('0')" style='width:100%; height:100%'></td>
+             <td><input type="button" id="igual" value="=" onclick="esIgual()" style='width:100%; height:100%'></td>
+             <td><input type="button" id="division" value="/" onclick="operaracion('/')" style='width:100%; height:100%'></td>
+          </tr>
+        </table>
+        </div>
+</body>
+
+</html>
