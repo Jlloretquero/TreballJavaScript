@@ -44,7 +44,8 @@ function insertarDatosTabla(posicion){
         fila="<tr class='info'>";
     } 
     
-    fila+= "<td><img src=' '></td>";
+   var foto = arrayPadre[posicion][0];
+    fila+= "<td><img src='http://www.vetusplas.com/images/webcli/peque/"+foto+".png' onclick=()'></td>";
     fila+= "<td>"+arrayPadre[posicion][0]+"</td>";
     fila+= "<td>"+arrayPadre[posicion][1]+"</td>";
     fila+= "<td>"+arrayPadre[posicion][2]+"</td>";
@@ -74,3 +75,6 @@ function calculoTotal(dato){
     document.getElementById("total"+dato).value=Math.round(total*100)/100;
 }
       
+function imagengrande(){
+     window.open();
+}
