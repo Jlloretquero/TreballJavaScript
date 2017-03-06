@@ -11,7 +11,8 @@ and open the template in the editor.
         <link rel="stylesheet" href="index.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="jquery-3.1.1.min.js"></script>
-      
+        
+
     </head>
     <body>
         <div id="MenuSuperior" >
@@ -32,20 +33,22 @@ and open the template in the editor.
                     <br>
                     <p>Codigo</p>
                     <br>
+                    
                 </div>
                 <div id="CuerpoDerecha"  class="col-lg-3"> 
                     <p align="center">SELECCIONAR CATALOGO</p>
-                 <form action="">
-                <input type="radio" name="ventana" value="Calculadora" checked onclick="cambiarIframe(1)"> Jardineria             
-                <input type="radio" name="ventana" value="Calculadora"  onclick="cambiarIframe(2)"> Limpieza
-                <input type="radio" name="ventana" value="Slider" onclick="cambiarIframe(3)"> Menaje
- 
-</form></div>
+                    <form action="">
+                        <input type="radio" name="ventana" value="Calculadora" checked onclick="cambiarIframe(1)"> Jardineria             
+                        <input type="radio" name="ventana" value="Calculadora"  onclick="cambiarIframe(2)"> Limpieza
+                        <input type="radio" name="ventana" value="Slider" onclick="cambiarIframe(3)"> Menaje
+
+                    </form>
+                </div>
             </div>
             <div id="CuerpoContenido" class="col-lg-9">
-               
+                <input type="button" value="Calcular Total" onclick="calculoTotal()" style="align:right" >
                 <iframe  name=iframe src="DIV.png" id="iframe" width=910 height=1100 frameborder="0" scrolling=yes marginwidth=0 marginheight=0 >Tu navegador no soporta frames!!</iframe>
-          </div>
+            </div>
         </div>
 
         <?php
@@ -55,8 +58,11 @@ and open the template in the editor.
         header("Cache-Control: post-check=0, pre-check=0", false);
         header("Pragma: no-cache");
         ?>
+
+  
+        <script src="Iframe.js"></script>
+        <script src="total.js"></script>
         
-         
-         <script src="Iframe.js"></script>
+      
     </body>
 </html>
