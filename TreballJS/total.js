@@ -7,13 +7,11 @@
 
 
 
-function calculoTotal(){
-  $.getScript("Jardin/Jardin.js", function(){
-      alert(totalJardin);
-      
-  });
-  
-  //console.log(totalJardin);
+/* global totalJardin */
+
+function calculoTotalb(){
+
+  alert(totalJardin);
   
    
 }

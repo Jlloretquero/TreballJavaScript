@@ -1,13 +1,11 @@
-
-
-
+var totalLimpieza = 0;
 var txtDatosLimpieza;
 //La posicion [0]=id, [1]=Descripcion [2]=unidades/caja, [3]=precio*caja [4]=cajas [5]=total€
 var arrayPadreLimpieza = [];
 function cargaArchivoLimpieza() {
-    
+
     $.ajax({
-        url: "Limpieza.csv",
+        url: "Limpieza/Limpieza.csv",
         success: function (data) {
             //Estamos guardandolo en un variable gloval para poder acceder a los datos desde fuera
             txtDatosLimpieza = data;
@@ -29,7 +27,7 @@ function leerDatosLimpieza() {
         arrayHijo.push(lineas.split(";")[0]);
         arrayHijo.push(lineas.split(";")[1]);
         arrayHijo.push(lineas.split(";")[2]);
-        arrayHijo.push(lineas.split(";")[3].replace(",","."));
+        arrayHijo.push(lineas.split(";")[3].replace(",", "."));
         arrayHijo.push(0);
         arrayHijo.push(0);
         //Metemos a la array hijo dentro de la padre
@@ -38,42 +36,58 @@ function leerDatosLimpieza() {
     }
 }
 //Esta es la funcion necesaria para poder insertar los datos en cada fila de la tabla, se creara dinamicamente
-function insertarDatosTablaLimpieza(posicion){
+function insertarDatosTablaLimpieza(posicion) {
     var fila;
-    if (posicion%2==0){
-        fila="<tr class='default'>";
+    if (posicion % 2 == 0) {
+        fila = "<tr class='default'>";
+    } else {
+        fila = "<tr class='active'>";
     }
-    else{
-        fila="<tr class='active'>";
-    } 
-    
-    fila+= "<td><img src=' '></td>";
-    fila+= "<td>"+arrayPadreLimpieza[posicion][0]+"</td>";
-    fila+= "<td>"+arrayPadreLimpieza[posicion][1]+"</td>";
-    fila+= "<td>"+arrayPadreLimpieza[posicion][2]+"</td>";
-    fila+= "<td>"+arrayPadreLimpieza[posicion][3]+"</td>";
-    fila+= "<td><input type='number' id='cajas"+posicion+"' min='0' oninput='calculoTotalLimpieza("+posicion+")'></td>";
-    fila+= "<td><input type='number' disabled id='total"+posicion+"'></td>";
-    fila+= "</tr>";
+
+    var foto = arrayPadreLimpieza[posicion][0];
+    fila += "<td><img src='http://www.vetusplas.com/images/webcli/peque/" + foto + ".png' onclick='imagengrandeLimpieza(" + posicion + ")' id='foto" + posicion + "'></td>";
+    fila += "<td>" + arrayPadreLimpieza[posicion][0] + "</td>";
+    fila += "<td>" + arrayPadreLimpieza[posicion][1] + "</td>";
+    fila += "<td>" + arrayPadreLimpieza[posicion][2] + "</td>";
+    fila += "<td>" + arrayPadreLimpieza[posicion][3] + "</td>";
+    fila += "<td><input type='number' id='cajas" + posicion + "' min='0' oninput='calculoTotalLimpieza(" + posicion + ")'></td>";
+    fila += "<td><input type='number' disabled id='total" + posicion + "'></td>";
+    fila += "</tr>";
     //Cada vez que hago un fila no borre la anterior
-    document.getElementById("tbody").innerHTML+=fila;
-    
+    document.getElementById("tbodyLimpieza").innerHTML += fila;
+
 }
 
-function calculoTotalLimpieza(dato){
-    var numCaja=arrayPadreLimpieza[dato][4]=parseInt(document.getElementById("cajas"+dato).value);
+function calculoTotalLimpieza(dato) {
+    var numCaja = arrayPadreLimpieza[dato][4] = parseInt(document.getElementById("cajas" + dato).value);
     console.log(arrayPadreLimpieza[dato]);
     console.log(dato);
-    
-    var udCaja=parseInt(arrayPadreLimpieza[dato][2]);
-    var precio=parseFloat(arrayPadreLimpieza[dato][3]);
-    
-    var total=(udCaja*precio)*numCaja;
+
+    var udCaja = parseInt(arrayPadreLimpieza[dato][2]);
+    var precio = parseFloat(arrayPadreLimpieza[dato][3]);
+
+    var total = (udCaja * precio) * numCaja;
     console.log(total);
-    
-    arrayPadreLimpieza[dato][5]=total;
+
+    arrayPadreLimpieza[dato][5] = total;
     console.log(arrayPadreLimpieza[dato]);
-    
-    document.getElementById("total"+dato).value=Math.round(total*100)/100;
+
+    document.getElementById("total" + dato).value = Math.round(total * 100) / 100;
+    totalLimpieza = totalLimpieza + total;
+    console.log(totalLimpieza);
+    console.log(total);
 }
-      
+function imagengrandeLimpieza(dato) {
+    var altura = 1312;
+    var anchura = 510;
+    var foto = arrayPadreLimpieza[dato][0];
+    console.log(foto);
+// calculamos la posicion x e y para centrar la ventana
+    var y = parseInt((window.screen.height / 2) - (altura / 2));
+    var x = parseInt((window.screen.width / 2) - (anchura / 2));
+
+// mostramos la ventana centrada
+
+    window.open('http://www.vetusplas.com/images/webcli/grande/' + foto + '.png', target = 'blank', 'width=' + anchura + ',height=' + altura + ',top=' + y + ',left=' + x + ',toolbar=no,location=no,status=no,menubar=no,scrollbars=no,directories=no,resizable=no', title = 'testing');
+
+}

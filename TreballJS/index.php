@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+
 <html>
     <head>
         <meta charset="UTF-8">
@@ -11,7 +6,7 @@ and open the template in the editor.
         <link rel="stylesheet" href="index.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="jquery-3.1.1.min.js"></script>
-        
+
 
     </head>
     <body>
@@ -33,36 +28,81 @@ and open the template in the editor.
                     <br>
                     <p>Codigo</p>
                     <br>
-                    
+
                 </div>
                 <div id="CuerpoDerecha"  class="col-lg-3"> 
                     <p align="center">SELECCIONAR CATALOGO</p>
-                    <form action="">
-                        <input type="radio" name="ventana" value="Calculadora" checked onclick="cambiarIframe(1)"> Jardineria             
-                        <input type="radio" name="ventana" value="Calculadora"  onclick="cambiarIframe(2)"> Limpieza
-                        <input type="radio" name="ventana" value="Slider" onclick="cambiarIframe(3)"> Menaje
 
-                    </form>
+                    <div id="div1" class="Catalogos"onclick="cambiarIframe(3)"><p>Menaje</p></div>
+                     <div  id="div2" class="Catalogos" onclick="cambiarIframe(2)"><p>Limpieza</p></div>
+                     <div  id="div3" class="Catalogos"onclick="cambiarIframe(1)"><p>Jardineria</p></div> 
+               
                 </div>
             </div>
-            <div id="CuerpoContenido" class="col-lg-9">
-                <input type="button" value="Calcular Total" onclick="calculoTotal()" style="align:right" >
-                <iframe  name=iframe src="DIV.png" id="iframe" width=910 height=1100 frameborder="0" scrolling=yes marginwidth=0 marginheight=0 >Tu navegador no soporta frames!!</iframe>
+            <input type="button" value="Calcular Total" onclick="calculoTotalb()" style="align:right" >
+
+            <div id="CuerpoContenidoJardin" class="col-lg-9" style="display: none">
+                <table class="table" style="width: 100%">
+                    <thead>
+                        <tr style="background-color: #2c3e50; color:white">
+                            <th>IMAGEN</th>
+                            <th>REFERENCIA</th>
+                            <th>DESCRIPCION</th>
+                            <th>Ud/Caja</th>
+                            <th>PRECIO</th>
+                            <th>CAJAS</th> 
+                            <th>TOTAL</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbodyJardin"></tbody>
+                </table> 
             </div>
+
+            <div id="CuerpoContenidoLimpieza" class="col-lg-9" style="display: none">
+                <table class="table" style="width: 100%">
+                    <thead>
+                        <tr style="background-color: #2c3e50; color:white">
+                            <th>IMAGEN</th>
+                            <th>REFERENCIA</th>
+                            <th>DESCRIPCION</th>
+                            <th>Ud/Caja</th>
+                            <th>PRECIO</th>
+                            <th>CAJAS</th> 
+                            <th>TOTAL</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbodyLimpieza"></tbody>
+                </table> 
+            </div>
+
+            <div id="CuerpoContenidoMenaje" class="col-lg-9"style="display: none">
+                <table class="table" style="width: 100%">
+                    <thead>
+                        <tr style="background-color: #2c3e50; color:white">
+                            <th>IMAGEN</th>
+                            <th>REFERENCIA</th>
+                            <th>DESCRIPCION</th>
+                            <th>Ud/Caja</th>
+                            <th>PRECIO</th>
+                            <th>CAJAS</th> 
+                            <th>TOTAL</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbodyMenaje"></tbody>
+                </table> 
+            </div>
+
         </div>
 
-        <?php
-        header("Expires: Tue, 01 Jan 2000 00:00:00 GMT");
-        header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
-        header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
-        header("Cache-Control: post-check=0, pre-check=0", false);
-        header("Pragma: no-cache");
-        ?>
 
-  
+
+
         <script src="Iframe.js"></script>
+        <script type="text/javascript" src="Jardin/Jardin.js"></script>
+        <script type="text/javascript" src="Limpieza//Limpieza.js"></script>
+        <script type="text/javascript" src="Menaje/Menaje.js"></script>
         <script src="total.js"></script>
-        
-      
+
+
     </body>
 </html>

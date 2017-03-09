@@ -1,16 +1,21 @@
-function cambiarIframe($parametro){
+function cambiarIframe($parametro) {
 
-    if ($parametro == 1){
-        document.getElementById("iframe").src="Jardin/Jardin.html"
-    }
-  
-    else if ($parametro == 2){
-        document.getElementById("iframe").src="Limpieza/Limpieza.html"
+    if ($parametro == 1) {
+        document.getElementById("CuerpoContenidoJardin").style.display = "block";
+    } else {
+        document.getElementById("CuerpoContenidoJardin").style.display = "none";
     }
 
-     else if ($parametro == 3){
-        document.getElementById("iframe").src="Menaje/Menaje.html"
+    if ($parametro == 2) {
+        document.getElementById("CuerpoContenidoLimpieza").style.display = "block";
+    } else {
+        document.getElementById("CuerpoContenidoLimpieza").style.display = "none";
     }
 
+    if ($parametro == 3) {
+        document.getElementById("CuerpoContenidoMenaje").style.display = "block";
+    } else {
+        document.getElementById("CuerpoContenidoMenaje").style.display = "none";
+    }
 
 }

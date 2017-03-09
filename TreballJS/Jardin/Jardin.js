@@ -6,7 +6,7 @@ var arrayPadreJardin = [];
 function cargarArchivoJardin() {
     
     $.ajax({
-        url: "Jardin.csv",
+        url: "Jardin/Jardin.csv",
         success: function (data) {
             //Estamos guardandolo en un variable gloval para poder acceder a los datos desde fuera
             txtDatosJardin = data;
@@ -46,7 +46,7 @@ function insertarDatosTablaJardin(posicion) {
     }
 
     var foto = arrayPadreJardin[posicion][0];
-    fila += "<td><img src='http://www.vetusplas.com/images/webcli/peque/" + foto + ".png' onclick='imagengrande(" + posicion + ")' id='foto" + posicion + "'></td>";
+    fila += "<td><img src='http://www.vetusplas.com/images/webcli/peque/" + foto + ".png' onclick='imagengrandeJardin(" + posicion + ")' id='foto" + posicion + "'></td>";
     fila += "<td>" + arrayPadreJardin[posicion][0] + "</td>";
     fila += "<td>" + arrayPadreJardin[posicion][1] + "</td>";
     fila += "<td>" + arrayPadreJardin[posicion][2] + "</td>";
@@ -55,11 +55,12 @@ function insertarDatosTablaJardin(posicion) {
     fila += "<td><input type='number' disabled id='total" + posicion + "'></td>";
     fila += "</tr>";
     //Cada vez que hago un fila no borre la anterior
-    document.getElementById("tbody").innerHTML += fila;
+    document.getElementById("tbodyJardin").innerHTML += fila;
 
 }
 
 function calculoTotalJardin(dato) {
+    totalJardin = 0;
     var numCaja = arrayPadreJardin[dato][4] = parseInt(document.getElementById("cajas" + dato).value);
     console.log(arrayPadreJardin[dato]);
     console.log(dato);
@@ -68,7 +69,7 @@ function calculoTotalJardin(dato) {
     var precio = parseFloat(arrayPadreJardin[dato][3]);
 
     var total = (udCaja * precio) * numCaja;
-    console.log(total);
+    //console.log(total);
 
     arrayPadreJardin[dato][5] = total;
     console.log(arrayPadreJardin[dato]);
@@ -76,6 +77,10 @@ function calculoTotalJardin(dato) {
     document.getElementById("total" + dato).value = Math.round(total * 100) / 100;
 
     totalJardin = totalJardin + total;
+    
+    console.log(numCaja);
+    console.log(udCaja);
+    console.log(precio);
     console.log(totalJardin);
 }
 

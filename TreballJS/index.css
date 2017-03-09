@@ -4,7 +4,7 @@ body {
 }
 
 #MenuSuperior{
-    background-color: #4CAF50;
+    background-color: black;
     color: white;
     font-size: 11px;
     /*Esto es negrita*/
@@ -27,9 +27,25 @@ body {
      float: left;
 }
 
+.Catalogos{
+    float: right;
+    padding: 5px
+}
 .BotonesMenu{
     float: right;
     padding: 5px
+}
+
+#div1 p:hover {
+background-color: #ff6666;
+}
+
+#div2 p:hover {
+background-color: #ff6666;
+}
+
+#div3 p:hover {
+background-color: #ff6666;
 }
 
 #Boton6{
@@ -42,18 +58,20 @@ body {
     margin-top: 100px;
     /*margin-left: 20%;*/
     /*margin-right: 20%;*/
-    background-color: #FF9800;
+    background-color: white;
   padding: 0px;
 }
 #CuerpoDerecha{
     font-weight: bold;
-    background-color: #E91E63;
+    background-color: white;
 }
 #CuerpoIzquierda{
     font-weight: bold;
-    background-color: #1976D2;
+    background-color: white;
 }
 
 #CuerpoContenido{
-    background-color: #546E7A;
+    background-color: white;
+    max-width: 40px;
 }
+
