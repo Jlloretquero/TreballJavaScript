@@ -50,8 +50,8 @@ function insertarDatosTablaLimpieza(posicion) {
     fila += "<td>" + arrayPadreLimpieza[posicion][1] + "</td>";
     fila += "<td>" + arrayPadreLimpieza[posicion][2] + "</td>";
     fila += "<td>" + arrayPadreLimpieza[posicion][3] + "</td>";
-    fila += "<td><input type='number' id='cajas" + posicion + "' min='0' oninput='calculoTotalLimpieza(" + posicion + ")'></td>";
-    fila += "<td><input type='number' disabled id='total" + posicion + "'></td>";
+    fila += "<td><input type='number' id='cajasLimpieza" + posicion + "' min='0' oninput='calculoTotalLimpieza(" + posicion + ")'></td>";
+    fila += "<td><input type='number' disabled id='totalLimpieza" + posicion + "'></td>";
     fila += "</tr>";
     //Cada vez que hago un fila no borre la anterior
     document.getElementById("tbodyLimpieza").innerHTML += fila;
@@ -59,7 +59,8 @@ function insertarDatosTablaLimpieza(posicion) {
 }
 
 function calculoTotalLimpieza(dato) {
-    var numCaja = arrayPadreLimpieza[dato][4] = parseInt(document.getElementById("cajas" + dato).value);
+    
+    var numCaja = arrayPadreLimpieza[dato][4] = parseInt(document.getElementById("cajasLimpieza" + dato).value);
     console.log(arrayPadreLimpieza[dato]);
     console.log(dato);
 
@@ -72,10 +73,19 @@ function calculoTotalLimpieza(dato) {
     arrayPadreLimpieza[dato][5] = total;
     console.log(arrayPadreLimpieza[dato]);
 
-    document.getElementById("total" + dato).value = Math.round(total * 100) / 100;
-    totalLimpieza = totalLimpieza + total;
-    console.log(totalLimpieza);
+    document.getElementById("totalLimpieza" + dato).value = Math.round(total * 100) / 100;
+   
     console.log(total);
+}
+
+function calcularTablaLimpieza(){
+   totalLimpieza=0;
+   
+   for (i=0; i<arrayPadreLimpieza.length; i++){
+       totalLimpieza += arrayPadreLimpieza[i][5];
+       
+   }
+   
 }
 function imagengrandeLimpieza(dato) {
     var altura = 1312;

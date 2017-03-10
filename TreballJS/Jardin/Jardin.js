@@ -60,7 +60,7 @@ function insertarDatosTablaJardin(posicion) {
 }
 
 function calculoTotalJardin(dato) {
-    totalJardin = 0;
+    
     var numCaja = arrayPadreJardin[dato][4] = parseInt(document.getElementById("cajas" + dato).value);
     console.log(arrayPadreJardin[dato]);
     console.log(dato);
@@ -76,12 +76,21 @@ function calculoTotalJardin(dato) {
 
     document.getElementById("total" + dato).value = Math.round(total * 100) / 100;
 
-    totalJardin = totalJardin + total;
+    
     
     console.log(numCaja);
     console.log(udCaja);
     console.log(precio);
-    console.log(totalJardin);
+    
+}
+function calcularTablaJardin(){
+   totalJardin=0;
+   
+   for (i=0; i<arrayPadreJardin.length; i++){
+       totalJardin += arrayPadreJardin[i][5];
+       
+   }
+   console.log(totalJardin); 
 }
 
 function imagengrandeJardin(dato) {

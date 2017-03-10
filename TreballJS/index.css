@@ -71,7 +71,11 @@ background-color: #ff6666;
 }
 
 #CuerpoContenido{
-    background-color: white;
+    background-color:white;
     max-width: 40px;
 }
 
+#CuerpoTotal{
+    background-color: white;
+     margin-left: 70px;
+}

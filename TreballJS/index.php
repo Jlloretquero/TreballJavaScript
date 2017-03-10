@@ -36,12 +36,15 @@
                     <div id="div1" class="Catalogos"onclick="cambiarIframe(3)"><p>Menaje</p></div>
                      <div  id="div2" class="Catalogos" onclick="cambiarIframe(2)"><p>Limpieza</p></div>
                      <div  id="div3" class="Catalogos"onclick="cambiarIframe(1)"><p>Jardineria</p></div> 
+                     
+                    
                
                 </div>
             </div>
-            <input type="button" value="Calcular Total" onclick="calculoTotalb()" style="align:right" >
+          
 
             <div id="CuerpoContenidoJardin" class="col-lg-9" style="display: none">
+                  <input type="button" value="Calcular Total" onclick="calculoTotalb()" style="align:right" >
                 <table class="table" style="width: 100%">
                     <thead>
                         <tr style="background-color: #2c3e50; color:white">
@@ -59,6 +62,7 @@
             </div>
 
             <div id="CuerpoContenidoLimpieza" class="col-lg-9" style="display: none">
+                  <input type="button" value="Calcular Total" onclick="calculoTotalb()" style="align:right" >
                 <table class="table" style="width: 100%">
                     <thead>
                         <tr style="background-color: #2c3e50; color:white">
@@ -76,6 +80,7 @@
             </div>
 
             <div id="CuerpoContenidoMenaje" class="col-lg-9"style="display: none">
+                  <input type="button" value="Calcular Total" onclick="calculoTotalb()" style="align:right" >
                 <table class="table" style="width: 100%">
                     <thead>
                         <tr style="background-color: #2c3e50; color:white">
@@ -91,7 +96,9 @@
                     <tbody id="tbodyMenaje"></tbody>
                 </table> 
             </div>
-
+            <div id="CuerpoContenidoTotal" class="col-lg-3" style="display: none">
+                
+            </div>
         </div>
 
 

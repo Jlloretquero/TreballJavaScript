@@ -49,8 +49,8 @@ function insertarDatosTablaMenaje(posicion) {
     fila += "<td>" + arrayPadreMenaje[posicion][1] + "</td>";
     fila += "<td>" + arrayPadreMenaje[posicion][2] + "</td>";
     fila += "<td>" + arrayPadreMenaje[posicion][3] + "</td>";
-    fila += "<td><input type='number' id='cajas" + posicion + "' min='0' oninput='calculoTotalMenaje(" + posicion + ")'></td>";
-    fila += "<td><input type='number' disabled id='total" + posicion + "'></td>";
+    fila += "<td><input type='number' id='cajasMenaje" + posicion + "' min='0' oninput='calculoTotalMenaje(" + posicion + ")'></td>";
+    fila += "<td><input type='number' disabled id='totalMenaje" + posicion + "'></td>";
     fila += "</tr>";
     //Cada vez que hago un fila no borre la anterior
     document.getElementById("tbodyMenaje").innerHTML += fila;
@@ -58,7 +58,8 @@ function insertarDatosTablaMenaje(posicion) {
 }
 
 function calculoTotalMenaje(dato) {
-    var numCaja = arrayPadreMenaje[dato][4] = parseInt(document.getElementById("cajas" + dato).value);
+
+    var numCaja = arrayPadreMenaje[dato][4] = parseInt(document.getElementById("cajasMenaje" + dato).value);
     console.log(arrayPadreMenaje[dato]);
     console.log(dato);
 
@@ -71,10 +72,18 @@ function calculoTotalMenaje(dato) {
     arrayPadreMenaje[dato][5] = total;
     console.log(arrayPadreMenaje[dato]);
 
-    document.getElementById("total" + dato).value = Math.round(total * 100) / 100;
+    document.getElementById("totalMenaje" + dato).value = Math.round(total * 100) / 100;
 
-    totalMenaje = totalMenaje + total;
-
+    
+}
+function calcularTablaMenaje(){
+   totalMenaje=0;
+   
+   for (i=0; i<arrayPadreMenaje.length; i++){
+       totalMenaje += arrayPadreMenaje[i][5];
+       
+   }
+   
 }
 function imagengrandeMenaje(dato) {
     var altura = 1312;
